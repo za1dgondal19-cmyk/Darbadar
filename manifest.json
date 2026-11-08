@@ -1,0 +1,12 @@
+{
+  "name": "Darbadar — Discover Pakistan",
+  "short_name": "Darbadar",
+  "description": "Discover places and plan journeys across Pakistan.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f5ef",
+  "theme_color": "#101b17",
+  "lang": "en",
+  "icons": []
+}
