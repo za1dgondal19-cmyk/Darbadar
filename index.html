@@ -26,12 +26,12 @@
 </main>
 <script>
 const places=[
-{name:"Hunza Valley",region:"North",loc:"Gilgit-Baltistan",type:"Mountain escape",img:"https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=85"},
-{name:"Fairy Meadows",region:"North",loc:"Diamer, Gilgit-Baltistan",type:"Alpine adventure",img:"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85"},
-{name:"Swat Valley",region:"KPK",loc:"Khyber Pakhtunkhwa",type:"Valley life",img:"https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=85"},
-{name:"Lahore",region:"Punjab",loc:"Punjab",type:"Culture & heritage",img:"https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=900&q=85"},
-{name:"Skardu",region:"North",loc:"Gilgit-Baltistan",type:"Lakes & peaks",img:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"},
-{name:"Mohenjo-daro",region:"Sindh",loc:"Larkana, Sindh",type:"Ancient history",img:"https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=900&q=85"}
+{name:"Hunza Valley",region:"North",loc:"Gilgit-Baltistan",type:"Mountain escape",img:"https://ms.ilaan.com/mediaresources/images/blogs/tinymice/1200px-Pasu_cones-min-min_dd55a4fe-c23c-4561-8a90-452b9c46616c.jpg"},
+{name:"Fairy Meadows",region:"North",loc:"Diamer, Gilgit-Baltistan",type:"Alpine adventure",img:"https://rezkit-tour-images.b-cdn.net/01h7ywwd7at70t98wdj69emng5/images/01JQP9E2MSVYGWCRR61720TD4K.jpg?aspect_ratio=1500%3A1158.75"},
+{name:"Swat Valley",region:"KPK",loc:"Khyber Pakhtunkhwa",type:"Valley life",img:"https://upload.wikimedia.org/wikipedia/commons/b/bb/River_-_Swat_Valley_-_Pakistan.jpg"},
+{name:"Lahore",region:"Punjab",loc:"Punjab",type:"Culture & heritage",img:"https://algedra.com.tr/files/blog/mosque_architecture/badshahi_mosque_lahore_pakistan.jpg"},
+{name:"Skardu",region:"North",loc:"Gilgit-Baltistan",type:"Lakes & peaks",img:"https://upload.wikimedia.org/wikipedia/commons/b/b0/Lower_Kachura_Lake%2C_Shangrila_Resort_Skardu%2C_the_mirror_realm.jpg"},
+{name:"Mohenjo-daro",region:"Sindh",loc:"Larkana, Sindh",type:"Ancient history",img:"https://res.cloudinary.com/jerrick/image/upload/v1680952391/64314c468d3690001d7b4ba6.jpg"}
 ];
 let region="All",saved=JSON.parse(localStorage.getItem("darbadarSaved")||"[]");
 function card(p){let on=saved.includes(p.name);return '<article class="place" style="cursor:pointer" onclick="openDestination(\''+p.name+'\')"><div class="photo"><img loading="lazy" src="'+p.img+'" alt="'+p.name+'" onerror="this.style.display=\'none\'"><button class="save" aria-label="Save '+p.name+'" onclick="event.stopPropagation();toggleSave(\''+p.name+'\')">'+(on?'♥':'♡')+'</button></div><div class="placebody"><h3>'+p.name+'</h3><p>⌖ '+p.loc+'</p><span class="tag">'+p.type+'</span></div></article>'}
