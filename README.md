@@ -29,7 +29,8 @@ This is a frontend prototype, not a fully connected commercial booking platform.
 - Maps and route links are external. They do not guarantee road safety, route availability or route optimisation.
 - Weather and road links open official external services. Live alerts are not embedded in the app.
 - Urdu translation currently covers selected interface labels; destination descriptions and much of the detailed guide content remain in English.
-- The app does not currently have accounts, a hosted database, admin moderation, push notifications or a native Android APK.
+- The Android project is a lightweight WebView wrapper around the live PWA. It is built as a debug-signed APK for testing; it is not yet a production-signed Play Store release.
+- The app does not currently have accounts, a hosted database, admin moderation or push notifications.
 - Offline mode caches the app shell; external photos, maps and search links still need an internet connection.
 
 ## Install on Android
@@ -38,6 +39,10 @@ This is a frontend prototype, not a fully connected commercial booking platform.
 2. Open Chrome's three-dot menu.
 3. Choose Install app or Add to Home screen (the wording can vary).
 4. Confirm installation.
+
+## Android APK
+
+A GitHub Actions workflow builds an installable debug APK when Android project files change or when manually triggered. The workflow publishes the APK under the repository's Releases and also stores it as a build artifact. The APK loads the live HTTPS app, so most content and external services require an internet connection. Debug signing is suitable for testing; a stable private release keystore and signing setup are required before public Play Store distribution.
 
 ## Free deployment
 
