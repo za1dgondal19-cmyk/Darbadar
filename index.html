@@ -330,7 +330,8 @@ function openDestination(name){
  const transportOrigin=document.getElementById("transport-origin");
  const updateTransportLinks=()=>{const origin=transportOrigin.value.trim();const from=origin?encodeURIComponent(origin+" to "+p.name+" Pakistan"):"";document.getElementById("transport-bus").href="https://www.google.com/search?q="+encodeURIComponent("bus tickets "+(origin?"from "+origin+" ":"")+"to "+p.name+" Pakistan");document.getElementById("transport-car").href="https://www.google.com/maps/dir/?api=1&"+(origin?"origin="+encodeURIComponent(origin)+"&":"")+"destination="+query;document.getElementById("transport-local").href="https://www.google.com/maps/search/"+encodeURIComponent("local transport taxi rent a car in "+p.name+" Pakistan");};
  transportOrigin.addEventListener("input",updateTransportLinks);
- updateTransportLinks();\n document.getElementById("guideback").addEventListener("click",()=>show("explore"));
+ updateTransportLinks();
+ document.getElementById("guideback").addEventListener("click",()=>show("explore"));
  document.getElementById("guidesave").addEventListener("click",()=>{toggleSave(p.name);openDestination(p.name)});
  show("destination");
 }
