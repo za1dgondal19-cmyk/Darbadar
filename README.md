@@ -1,31 +1,48 @@
-# Darbadar
+# Darbadar — Discover Pakistan
 
-A mobile-friendly, installable web-app foundation for discovering Pakistan.
+**Live app:** https://za1dgondal19-cmyk.github.io/Darbadar/
 
-## Current preview
-- Search and filter six sample destination cards.
-- Save destinations locally in the browser.
-- Switch the main interface between English and Urdu.
-- Submit community road observations, stored only on the current device.
-- Basic app-shell caching for repeat visits.
+Darbadar is a mobile-first, installable travel companion prototype for exploring destinations across Pakistan.
 
-## Important limitations
-This is an early frontend preview, not the complete travel platform. There is currently no shared database, account system, live road feed, verified accommodation/guide directory, map integration, push notifications, or admin dashboard. Community reports are local to the device and are **not verified**. Destination descriptions are starter sample content, not live travel advice.
+## What works in this version
 
-## Publish free with GitHub Pages
-1. Open the repository on GitHub.
-2. Go to **Settings → Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select branch **main** and folder **/(root)**, then save.
-5. Wait for GitHub Pages to publish the site. The URL will appear on the Pages settings screen.
+- Six destination guides: Hunza Valley, Fairy Meadows, Swat Valley, Lahore, Skardu and Mohenjo-daro.
+- Destination search and region filters.
+- Save destinations and trip plans on the current device.
+- Destination information, suggested activities, food ideas, stay-search shortcuts and local travel guidance.
+- OpenStreetMap destination maps and Google Maps directions/search links.
+- Trip planner with starting city, duration, pace, travel date, group size and an editable budget breakdown.
+- Indicative trip-planning budget ranges. These are not live quotations or guaranteed prices.
+- Packing and pre-departure safety checklists.
+- Links to official PMD weather, NDMA advisories and NHMP travel advisories.
+- English/Urdu interface toggle for the main navigation and selected interface labels.
+- Installable Progressive Web App shell and basic offline app-shell caching.
 
-Open the published URL on Android Chrome and use **Install app** / **Add to Home screen**.
+## Important limitations — read before relying on it
 
-## Next development milestones
-1. Add a real backend and shared database.
-2. Add user authentication and profile/saved data sync.
-3. Add maps, destination detail pages and route planning.
-4. Add official-source road alerts plus moderated community submissions.
-5. Add verified hotels, guesthouses, local guides and admin moderation.
-6. Complete Urdu translations and right-to-left layouts across every screen.
-7. Add push notifications and production security/privacy controls.
+This is a frontend prototype, not a fully connected commercial booking platform.
+
+- Saved places, itineraries, expense notes, checklists and road submissions are stored only in the browser/device using local storage. They do not sync to another phone and are not shared with other travellers.
+- Road submissions are local notes, not a live feed, official report or verified community update.
+- Destination content is editorial starter guidance. Conditions, opening hours, transport, prices and access can change; confirm them independently.
+- Hotel, restaurant, guide and attraction buttons open external search results. Darbadar does not verify listings, display live inventory, accept bookings or process payments.
+- Maps and route links are external. They do not guarantee road safety, route availability or route optimisation.
+- Weather and road links open official external services. Live alerts are not embedded in the app.
+- Urdu translation currently covers selected interface labels; destination descriptions and much of the detailed guide content remain in English.
+- The app does not currently have accounts, a hosted database, admin moderation, push notifications or a native Android APK.
+- Offline mode caches the app shell; external photos, maps and search links still need an internet connection.
+
+## Install on Android
+
+1. Open the live app in Google Chrome.
+2. Open Chrome's three-dot menu.
+3. Choose Install app or Add to Home screen (the wording can vary).
+4. Confirm installation.
+
+## Free deployment
+
+The project is hosted with GitHub Pages from the main branch, repository root. New commits are published by the repository's GitHub Pages workflow.
+
+## Next production requirements
+
+To turn this prototype into a public travel platform, the next engineering phase needs a secure backend/database, authentication, moderation tools, verified partner data, a live road/weather data strategy, privacy and security review, and device testing. Booking/payment integrations and a native APK would be separate phases.
