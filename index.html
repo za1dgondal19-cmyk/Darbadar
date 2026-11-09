@@ -64,6 +64,44 @@
 .detail-sticky a{white-space:nowrap;text-decoration:none;color:#42594a;background:#fff;border:1px solid var(--line);border-radius:30px;padding:9px 12px;font-size:10px;font-weight:800}
 .primary-guide-btn{display:block;text-align:center;text-decoration:none;background:var(--forest);color:white;border-radius:14px;padding:14px;font-size:12px;font-weight:800;margin-top:13px}
 @media(max-width:370px){.hero-title h1{font-size:29px}.quick-grid{gap:8px}.quick-card{padding:11px 9px}}
+
+/* Visual-first destination guide refresh */
+.welcome-card{display:flex;align-items:center;gap:12px;padding:14px 15px;background:#e9eee2;border:0;box-shadow:none}
+.welcome-card:before{content:"✦";display:grid;place-items:center;flex:0 0 40px;height:40px;border-radius:13px;background:#fff;font-size:20px;color:#6c8149}
+.welcome-card .mini-label{display:none}
+.welcome-card h2{font-size:14px;margin:0 0 3px}
+.welcome-card p{font-size:10px;line-height:1.4;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.detail-sticky a{padding:9px 13px;font-size:10px}
+.quick-card{min-height:76px;transition:transform .15s}
+.quick-card:active{transform:scale(.98)}
+.quick-icon{background:#eaf0df}
+.guide-block{padding:15px;margin:10px 0;border:0;box-shadow:0 5px 18px #1b352008}
+.guide-block h2{font-size:16px;margin-bottom:11px}
+.guide-block .mini-label{margin-bottom:5px}
+#dg-do .guide-list{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0}
+#dg-do .guide-list li{background:#edf2e6;border-radius:13px;padding:12px 10px 12px 34px;font-size:10px;line-height:1.4;position:relative;min-height:65px;color:#3f5747}
+#dg-do .guide-list li:before{content:"✦";position:absolute;left:11px;top:12px;color:#71894b;font-size:13px}
+#dg-food .guide-list{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;margin:0}
+#dg-food .guide-list li{background:#f2e9dc;border-radius:12px;padding:10px 12px;font-size:10px;line-height:1.4;color:#5e4d39;flex:1 1 42%}
+#dg-stay>p:not(.notice){background:#edf2e6;border-radius:13px;padding:12px;font-size:10px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+#dg-stay .primary-guide-btn{margin-top:9px}
+#dg-local .guide-note{font-size:10px;line-height:1.45;padding:11px}
+#dg-local>p,#dg-local .guide-list{display:none}
+#dg-local details summary{background:#fff;border:1px solid var(--line);border-radius:11px;padding:11px}
+#dg-packing>p{display:none}
+#dg-packing .packing-list{grid-template-columns:1fr 1fr;gap:7px}
+#dg-packing .packing-item{font-size:9px;line-height:1.35;padding:9px;border-radius:11px;background:#edf2e6;border:0}
+#dg-packing .packing-item input{width:15px;height:15px}
+#dg-packing .packing-progress{font-weight:800;color:#60734b}
+.detailbody>.guide-block:not(#dg-do):not(#dg-stay):not(#dg-food):not(#dg-local):not(#dg-packing):not(#dg-map) .guide-list{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.detailbody>.guide-block:not(#dg-do):not(#dg-stay):not(#dg-food):not(#dg-local):not(#dg-packing):not(#dg-map) .guide-list li{background:#edf2e6;border-radius:11px;padding:10px;font-size:9px;line-height:1.4}
+.detailbody>.guide-block:not(#dg-do):not(#dg-stay):not(#dg-food):not(#dg-local):not(#dg-packing):not(#dg-map)>p{font-size:10px;line-height:1.45}
+#dg-map .mapframe{height:190px;border-radius:15px}
+#dg-map>p{font-size:9px;line-height:1.4}
+.trip-builder{padding:15px;border-radius:18px}
+.trip-builder>p{font-size:10px;line-height:1.4}
+.trip-result ol{font-size:10px}
+@media(max-width:370px){#dg-do .guide-list,#dg-packing .packing-list{grid-template-columns:1fr}.quick-card{gap:8px}.quick-icon{width:34px;height:34px;flex-basis:34px}}
 </style>
 </head>
 <body><main class="app">
