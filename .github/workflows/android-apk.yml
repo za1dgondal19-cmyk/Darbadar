@@ -31,11 +31,23 @@ jobs:
         with:
           gradle-version: '8.9'
 
-      - name: Accept Android SDK licences
-        run: yes | sdkmanager --licenses
+      - name: Locate Android SDK manager and accept licences
+        shell: bash
+        run: |
+          SDKMANAGER="$(find "$ANDROID_HOME" -type f -name sdkmanager 2>/dev/null | head -n 1)"
+          if [ -z "$SDKMANAGER" ]; then
+            echo "Android SDK manager was not found under $ANDROID_HOME"
+            ls -la "$ANDROID_HOME" || true
+            exit 1
+          fi
+          echo "Using $SDKMANAGER"
+          yes | "$SDKMANAGER" --licenses
 
       - name: Install Android platform
-        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+        shell: bash
+        run: |
+          SDKMANAGER="$(find "$ANDROID_HOME" -type f -name sdkmanager 2>/dev/null | head -n 1)"
+          "$SDKMANAGER" "platforms;android-35" "build-tools;35.0.0"
 
       - name: Build installable debug APK
         working-directory: android
