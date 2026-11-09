@@ -41,7 +41,7 @@ jobs:
             exit 1
           fi
           echo "Using $SDKMANAGER"
-          yes | "$SDKMANAGER" --licenses
+          yes | "$SDKMANAGER" --licenses || true
 
       - name: Install Android platform
         shell: bash
