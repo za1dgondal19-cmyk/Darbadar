@@ -252,7 +252,7 @@ const places=[
 ];
 let region="All",saved=JSON.parse(localStorage.getItem("darbadarSaved")||"[]");
 function card(p){let on=saved.includes(p.name);return "<article class=\"place\" role=\"button\" tabindex=\"0\" data-place=\""+p.name+"\" style=\"cursor:pointer\"><div class=\"photo\"><img loading=\"lazy\" src=\""+p.img+"\" alt=\""+p.name+"\" onerror=\"this.style.display='none'\"><button class=\"save\" aria-label=\"Save "+p.name+"\" onclick=\"event.stopPropagation();toggleSave('"+p.name+"')\">"+(on?"♥":"♡")+"</button></div><div class=\"placebody\"><h3>"+p.name+"</h3><p>⌖ "+p.loc+"</p><span class=\"tag\">"+p.type+"</span></div></article>"}
-function render(){let q=document.getElementById("search").value.toLowerCase().trim();let list=places.filter(p=>(region==="All"||p.region===region)&&(p.name+" "+p.loc+" "+p.type+" "+(p.keywords||"")).toLowerCase().includes(q));document.getElementById("cards").innerHTML=list.map(card).join("")||'<div class="empty">No destinations found. Try another place or region.</div>';let ss=places.filter(p=>saved.includes(p.name));document.getElementById("savedcards").innerHTML=ss.map(card).join("");document.getElementById("savedempty").style.display=ss.length?"none":"block"}
+function render(){let q=document.getElementById("search").value.toLowerCase().trim();let list=places.filter(p=>(region==="All"||p.region===region)&&(p.name+" "+p.loc+" "+p.type+" "+(p.keywords||"")).toLowerCase().includes(q));document.getElementById("cards").innerHTML=list.map(card).join("")||'<div class="empty">No destinations found. Try another place or region.</div>';let ss=places.filter(p=>saved.includes(p.name));document.getElementById("savedcards").innerHTML=ss.map(card).join("");document.getElementById("savedempty").style.display=ss.length?"none":"block";if(appUrdu)applyAppLanguage()}
 function toggleSave(n){saved=saved.includes(n)?saved.filter(x=>x!==n):[...saved,n];localStorage.setItem('darbadarSaved',JSON.stringify(saved));render()}
 function show(id){document.querySelectorAll('.screen').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.screen===id));window.scrollTo(0,0);if(id==='saved')render();if(id==='profile')renderSavedTrips()}
 document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>show(b.dataset.screen)));
@@ -283,8 +283,7 @@ function applyAppLanguage(){
  document.getElementById("eyebrow").textContent=appUrdu?"سفر یہاں سے شروع ہوتا ہے":"THE JOURNEY STARTS HERE";
 }
 document.getElementById("lang").onclick=()=>{appUrdu=!appUrdu;applyAppLanguage();};
-const languageObserver=new MutationObserver(()=>{if(appUrdu)applyAppLanguage();});
-languageObserver.observe(document.querySelector(".app"),{childList:true,subtree:true});
+
 
 
 const placeCoords={"Hunza Valley":[36.3167,74.65],"Fairy Meadows":[35.4,74.6],"Swat Valley":[35.2227,72.4258],"Lahore":[31.5204,74.3587],"Skardu":[35.2971,75.6333],"Mohenjo-daro":[27.3294,68.1386]};
